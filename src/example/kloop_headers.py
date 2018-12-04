@@ -14,7 +14,7 @@ def extractdata(context, data):
     article_data = {
         "url": response.url,
         "autor": autor,
-		"header": header
+		"header": header,
 		"text": text
 	}
 
