@@ -7,14 +7,16 @@ def extractdata(context, data):
 
     # Parse the rest of the page to extract structured data.
 
-    autor = _gettext(page.xpath('.//header/div/div/a/text()'))
+    header = _gettext(page.xpath('.//header/h1/text()'))
+	autor = _gettext(page.xpath('.//header/div/div/a/text()'))
 		
     article_data = {
         "url": response.url,
         "autor": autor
+		"header": header
 	}
 
-    if article_data["autor"] is not None:
+    if article_data["autor","header"] is not None:
         # If 'rule' is not set, it defaults to 'pass', which triggers the
         # final 'store' stage.
         context.emit(data=article_data)
