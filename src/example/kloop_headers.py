@@ -9,7 +9,7 @@ def extractdata(context, data):
 
     header = _gettext(page.xpath('.//header/h1/text()'))
     autor = _gettext(page.xpath('.//header/div/div/a/text()'))
-    text = _gettext(page.xpath('.//article/text()'))
+    text = _gettext(page.xpath('.//article'))
 	
     article_data = {
         "url": response.url,
