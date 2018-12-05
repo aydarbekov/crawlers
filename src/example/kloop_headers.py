@@ -10,12 +10,14 @@ def extractdata(context, data):
     header = _gettext(page.xpath('.//header/h1/text()'))
     autor = _gettext(page.xpath('.//header/div/div/a/text()'))
     foto = _gettext(page.xpath('.//div[@class="stk-mask"]/img/@src'))
+    text = _gettext(page.xpath('.//div[@class='td-post-content']'))
 	
     article_data = {
         "url": response.url,
         "autor": autor,
 		"header": header,
-		"foto": foto
+		"foto": foto,
+		"text": text
 	}
 
     if article_data["header"] is not None:
