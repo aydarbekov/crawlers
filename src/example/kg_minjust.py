@@ -1,9 +1,9 @@
 def extractdata(context, data):
     # This stage comes after 'fetch' so the 'data' input contains an
     # HTTPResponse object.
-	response = context.http.rehash(data)
-	url = response.url
-	page = response.html
+    response = context.http.rehash(data)
+    url = response.url
+    page = response.html
 
     # Parse the rest of the page to extract structured data.
 
