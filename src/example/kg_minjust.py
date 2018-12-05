@@ -55,7 +55,7 @@ def extractdata(context, data):
 	    "district": district,
 	    "city": city,
 	    "microdistr": microdistr,
-	    "street":street
+	    "street":street,
 	    "home": home,
 	    "appartment": appartment,
 	    "phone": phone,
