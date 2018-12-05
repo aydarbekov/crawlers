@@ -1,9 +1,9 @@
 def extractdata(context, data):
     # This stage comes after 'fetch' so the 'data' input contains an
     # HTTPResponse object.
-    response = context.http.rehash(data)
-    url = response.url
-    page = response.html
+	response = context.http.rehash(data)
+	url = response.url
+	page = response.html
 
     # Parse the rest of the page to extract structured data.
 
@@ -39,10 +39,10 @@ def extractdata(context, data):
 	participants_total = gettext(page.xpath("//span[contains(text(),'30. О')]/../../following-sibling::td//text()"))
 	participants = gettext(page.xpath("//span[contains(text(),'31. У')]/../../following-sibling::td//text()"))
 	participant = gettext(page.xpath("//span[contains(text(),'Учредитель')]/../../following-sibling::td//text()"))
-))
+	
     org_data = {
-        "url": response.url,
-        "name": name,
+		"url": response.url,
+		"name": name,
 		"full_name_kg": full_name_kg,
 		"short_name_kg": short_name_kg,
 		"short_name_ru": short_name_ru,
