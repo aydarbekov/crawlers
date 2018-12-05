@@ -1,0 +1,94 @@
+# Scraper for the OCCRP web site.
+# The goal is not to download all HTML, but only PDFs & other documents
+# linked from the page as proof.
+name: kg_minjust
+
+# A title for display in the UI:
+description: 'State registry of Kyrgyz legal entities'
+
+# Uncomment to run this scraper automatically:
+schedule: daily
+delay: 1
+stealthy: true
+pipeline:
+
+  init:
+    # This first stage will get the ball rolling with a seed URL.
+    method: seed
+    params:
+      urls:
+        - http://register.minjust.gov.kg/register/SearchAction.seam?tin=0
+    handle:
+      pass: fetch
+
+  fetch:
+    # Download the seed page
+    method: fetch
+    params:
+      # These rules specify which pages should be scraped or included:
+      rules:
+        and:
+          - domain: http://register.minjust.gov.kg
+    handle:
+      pass: parse
+
+  parse:
+    # Parse the scraped pages to find if they contain additional links.
+    method: example.kg_minjust_parse:parse
+    handle:
+      # this makes it a recursive web crawler:
+      store: extractdata
+      fetch: fetch
+  
+  extractdata:
+    # Parse the scraped pages to extract useful information
+    method: example.kg_minjust:extractdata
+    handle:
+      pass: store
+
+  store:
+    # Store the crawled documents to a directory
+    method: db
+    params:
+      table: "kg_minjust"
+      unique:
+        - url
+        - name
+        - full_name_kg
+        - short_name_kg
+        - legal_form
+        - foreign_participation
+        - registration_number
+        - inn
+        - region
+        - district
+        - city
+        - microdistr
+        - short_name_ru
+        - legal_form
+        - foreign_participation
+        - registration_number
+        - inn
+        - region
+        - district
+        - city
+        - microdistr
+        - street
+        - home
+        - appartment
+        - phone
+        - fax
+        - mail
+        - Rereg
+        - Date_Order
+        - First_date_reg
+        - Method_of_creating
+        - Type_of_ownership
+        - head_name_sur
+        - main_activity_type
+        - eco_activity_code
+        - participants_phys_quan
+        - participants_jur_quan
+        - participants_total
+        - participants
+        - participant
