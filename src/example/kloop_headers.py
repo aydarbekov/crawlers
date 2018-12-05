@@ -13,8 +13,8 @@ def extractdata(context, data):
     text = _gettext(page.xpath('.//div[@class="td-post-content"]'))
 	
     article_data = {
-        "url": response.url,
-        "autor": autor,
+		"url": response.url,
+		"autor": autor,
 		"header": header,
 		"foto": foto,
 		"text": text
