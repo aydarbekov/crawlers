@@ -33,12 +33,12 @@ def extractdata(context, data):
     Type_of_ownership = _gettext(page.xpath("//span[contains(text(),'24. Ф')]/../../following-sibling::td//text()"))                        
     head_name_sur = _gettext(page.xpath("//span[contains(text(),'25. Ф')]/../../following-sibling::td//text()"))
     main_activity_type = _gettext(page.xpath("//span[contains(text(),'26. О')]/../../following-sibling::td//text()"))
-    eco_activity_code = gettext(page.xpath("//span[contains(text(),'27. К')]/../../following-sibling::td//text()"))
-    participants_phys_quan = gettext(page.xpath("//span[contains(text(),'28. К')]/../../following-sibling::td//text()"))
-    participants_jur_quan = gettext(page.xpath("//span[contains(text(),'29. К')]/../../following-sibling::td//text()"))
-    participants_total = gettext(page.xpath("//span[contains(text(),'30. О')]/../../following-sibling::td//text()"))
-    participants = gettext(page.xpath("//span[contains(text(),'31. У')]/../../following-sibling::td//text()"))
-    participant = gettext(page.xpath("//span[contains(text(),'Учредитель')]/../../following-sibling::td//text()"))
+    eco_activity_code = _gettext(page.xpath("//span[contains(text(),'27. К')]/../../following-sibling::td//text()"))
+    participants_phys_quan = _gettext(page.xpath("//span[contains(text(),'28. К')]/../../following-sibling::td//text()"))
+    participants_jur_quan = _gettext(page.xpath("//span[contains(text(),'29. К')]/../../following-sibling::td//text()"))
+    participants_total = _gettext(page.xpath("//span[contains(text(),'30. О')]/../../following-sibling::td//text()"))
+    participants = _gettext(page.xpath("//span[contains(text(),'31. У')]/../../following-sibling::td//text()"))
+    participant = _gettext(page.xpath("//span[contains(text(),'Учредитель')]/../../following-sibling::td//text()"))
 	
     org_data = {
 	    "url": response.url,
