@@ -42,7 +42,7 @@ def extractdata(context, data):
 	
     org_data = {
 	    "url": response.url,
-	    "name": name,
+	    "name": name_ru,
 	    "full_name_kg": full_name_kg,
 	    "short_name_kg": short_name_kg,
 	    "short_name_ru": short_name_ru,
