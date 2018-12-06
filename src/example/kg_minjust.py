@@ -7,7 +7,7 @@ def extractdata(context, data):
 
     # Parse the rest of the page to extract structured data.
 
-    #full_name_kg = _gettext(page.xpath("//span[contains(text(),'1. П')]/../../following-sibling::td//text()"))
+    full_name_kg = _gettext(page.xpath("//span[contains(text(),'1. П')]/../../following-sibling::td//text()"))
     name_ru = _gettext(page.xpath("//span[contains(text(),'2. П')]/../../following-sibling::td//text()"))
     #short_name_kg = _gettext(page.xpath("//span[contains(text(),'3. С')]/../../following-sibling::td//text()"))
     #short_name_ru = _gettext(page.xpath("//span[contains(text(),'4. С')]/../../following-sibling::td//text()"))
@@ -24,7 +24,7 @@ def extractdata(context, data):
     #home = _gettext(page.xpath("//span[contains(text(),'15. ')]/../../following-sibling::td//text()"))
     #appartment = _gettext(page.xpath("//span[contains(text(),'16. ')]/../../following-sibling::td//text()"))
     #phone = _gettext(page.xpath("//span[contains(text(),'17. Т')]/../../following-sibling::td//text()"))
-    fax = _gettext(page.xpath("//span[contains(text(),'18. Ф')]/../../following-sibling::td//text()"))
+    #fax = _gettext(page.xpath("//span[contains(text(),'18. Ф')]/../../following-sibling::td//text()"))
     #mail = _gettext(page.xpath("//span[contains(text(),'19. Э')]/../../following-sibling::td//text()"))
     #Rereg = _gettext(page.xpath("//span[contains(text(),'20. Г')]/../../following-sibling::td//text()"))
     #Date_Order = _gettext(page.xpath("//span[contains(text(),'21. Д')]/../../following-sibling::td//text()"))
@@ -43,7 +43,7 @@ def extractdata(context, data):
     org_data = {
 	    "url": response.url,
 	    "name_ru": name_ru,
-	    #"full_name_kg": full_name_kg,
+	    "full_name_kg": full_name_kg,
 	    #"short_name_kg": short_name_kg,
 	    #"short_name_ru": short_name_ru,
 	    #"legal_form": legal_form,
@@ -59,7 +59,7 @@ def extractdata(context, data):
 	    #"home": home,
 	    #"appartment": appartment,
 	    #"phone": phone,
-	    "fax": fax,
+	    #"fax": fax,
 	    #"mail": mail,
 	    #"Rereg": Rereg,
 	    #"Date_Order": Date_Order,
