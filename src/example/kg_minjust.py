@@ -14,7 +14,7 @@ def extractdata(context, data):
     legal_form = _gettext(page.xpath("//span[contains(text(),'5. О')]/../../following-sibling::td//text()"))
     foreign_participation = _gettext(page.xpath("//span[contains(text(),'6. Е')]/../../following-sibling::td//text()"))
     registration_number = _gettext(page.xpath("//span[contains(text(),'7. Р')]/../../following-sibling::td//text()"))
-    #okpo = _gettext(page.xpath("//span[contains(text(),'8. О')]/../../following-sibling::td//text()"))
+    okpo = _gettext(page.xpath("//span[contains(text(),'8. Код')]/../../../following-sibling::tr[1]/td//text()"))
     inn = _gettext(page.xpath("//span[contains(text(),'9. И')]/../../following-sibling::td//text()"))
     region = _gettext(page.xpath("//span[contains(text(),'10. О')]/../../following-sibling::td//text()"))
     district = _gettext(page.xpath("//span[contains(text(),'11. Р')]/../../following-sibling::td//text()"))
@@ -24,7 +24,7 @@ def extractdata(context, data):
     home = _gettext(page.xpath("//span[contains(text(),'15. ')]/../../following-sibling::td//text()"))
     appartment = _gettext(page.xpath("//span[contains(text(),'16. ')]/../../following-sibling::td//text()"))
     #phone = _gettext(page.xpath("//span[contains(text(),'17. Т')]/../../following-sibling::td//text()"))
-    #fax = _gettext(page.xpath("//span[contains(text(),'18. Ф')]/../../following-sibling::td//text()"))
+    fax = _gettext(page.xpath("//span[contains(text(),'18. Ф')]/../../following-sibling::td//text()"))
     #mail = _gettext(page.xpath("//span[contains(text(),'19. Э')]/../../following-sibling::td//text()"))
     #Rereg = _gettext(page.xpath("//span[contains(text(),'20. Г')]/../../following-sibling::td//text()"))
     #Date_Order = _gettext(page.xpath("//span[contains(text(),'21. Д')]/../../following-sibling::td//text()"))
@@ -49,7 +49,7 @@ def extractdata(context, data):
 	    "legal_form": legal_form,
 	    "foreign_participation": foreign_participation,
 	    "registration_number": registration_number,
-	    #"okpo": okpo,
+	    "okpo": okpo,
 	    "inn": inn,
 	    "region": region,
 	    "district": district,
@@ -59,7 +59,7 @@ def extractdata(context, data):
 	    "home": home,
 	    "appartment": appartment,
 	    #"phone": phone,
-	    #"fax": fax,
+	    "fax": fax,
 	    #"mail": mail,
 	    #"Rereg": Rereg,
 	    #"Date_Order": Date_Order,
