@@ -7,7 +7,7 @@ def extractdata(context, data):
 
     # Parse the rest of the page to extract structured data.
 
-    name = _gettext(page.xpath("//div[@class='list-street']/p"))
+    name = _gettext(page.xpath("//td[3]/div/p"))
     
 	
     org_data = {

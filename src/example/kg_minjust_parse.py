@@ -22,7 +22,7 @@ def parse_html(context, data, result):
     context.log.info('Parse: %r', result.url)
 
     title = result.html.findtext('.//title')
-    if title != None and 'title' not in data:
+    if title is not None and 'title' not in data:
         data['title'] = title
     else:
         data['faxtest'] = 'faxtest'

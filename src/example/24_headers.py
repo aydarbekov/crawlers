@@ -7,7 +7,7 @@ def extractdata(context, data):
 
     # Parse the rest of the page to extract structured data.
 
-    header = _gettext(page.xpath('.//header/h1/text()'))
+    header = _gettext(page.xpath('.//h1/text()'))
     autor = _gettext(page.xpath('.//header/div/div/a/text()'))
     foto = _gettext(page.xpath('.//div[@class="stk-mask"]/img/@src'))
     text = _gettext(page.xpath('.//p'))
