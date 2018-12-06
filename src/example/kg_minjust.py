@@ -8,7 +8,7 @@ def extractdata(context, data):
     # Parse the rest of the page to extract structured data.
 
     #full_name_kg = _gettext(page.xpath("//span[contains(text(),'1. П')]/../../following-sibling::td//text()"))
-    #name_ru = _gettext(page.xpath("//span[contains(text(),'2. П')]/../../following-sibling::td//text()"))
+    name_ru = _gettext(page.xpath("//span[contains(text(),'2. П')]/../../following-sibling::td//text()"))
     #short_name_kg = _gettext(page.xpath("//span[contains(text(),'3. С')]/../../following-sibling::td//text()"))
     #short_name_ru = _gettext(page.xpath("//span[contains(text(),'4. С')]/../../following-sibling::td//text()"))
     #legal_form = _gettext(page.xpath("//span[contains(text(),'5. О')]/../../following-sibling::td//text()"))
@@ -42,7 +42,7 @@ def extractdata(context, data):
 	
     org_data = {
 	    "url": response.url,
-	    #"name_ru": name_ru,
+	    "name_ru": name_ru,
 	    #"full_name_kg": full_name_kg,
 	    #"short_name_kg": short_name_kg,
 	    #"short_name_ru": short_name_ru,
