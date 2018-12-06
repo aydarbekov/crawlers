@@ -16,9 +16,9 @@ def extractdata(context, data):
     registration_number = _gettext(page.xpath("//span[contains(text(),'7. Р')]/../../following-sibling::td//text()"))
     okpo = _gettext(page.xpath("//span[contains(text(),'8. Код')]/../../../following-sibling::tr[1]/td//text()"))
     inn = _gettext(page.xpath("//span[contains(text(),'9. И')]/../../following-sibling::td//text()"))
-    #region = _gettext(page.xpath("//span[contains(text(),'10. О')]/../../following-sibling::td//text()"))
-    #district = _gettext(page.xpath("//span[contains(text(),'11. Р')]/../../following-sibling::td//text()"))
-    #city  = _gettext(page.xpath("//span[contains(text(),'12. Г')]/../../following-sibling::td//text()"))
+    region = _gettext(page.xpath("//span[contains(text(),'10. О')]/../../following-sibling::td//text()"))
+    district = _gettext(page.xpath("//span[contains(text(),'11. Р')]/../../following-sibling::td//text()"))
+    city  = _gettext(page.xpath("//span[contains(text(),'12. Г')]/../../following-sibling::td//text()"))
     #microdistr = _gettext(page.xpath("//span[contains(text(),'13. М')]/../../following-sibling::td//text()"))
     #street = _gettext(page.xpath("//span[contains(text(),'14. У')]/../../following-sibling::td//text()"))
     #home = _gettext(page.xpath("//span[contains(text(),'15. ')]/../../following-sibling::td//text()"))
@@ -51,9 +51,9 @@ def extractdata(context, data):
 	    "registration_number": registration_number,
 	    "okpo": okpo,
 	    "inn": inn,
-	    #"region": region,
-	    #"district": district,
-	    #"city": city,
+	    "region": region,
+	    "district": district,
+	    "city": city,
 	    #"microdistr": microdistr,
 	    #"street":street,
 	    #"home": home,
