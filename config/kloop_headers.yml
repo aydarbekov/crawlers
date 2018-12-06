@@ -1,10 +1,10 @@
 # Scraper for the OCCRP web site.
 # The goal is not to download all HTML, but only PDFs & other documents
 # linked from the page as proof.
-name: kg_kloop_headers
+name: 24kg_headers
 
 # A title for display in the UI:
-description: 'Headers from articles on Kloop.kg'
+description: 'Headers from articles on 24.kg'
 
 # Uncomment to run this scraper automatically:
 schedule: monthly
@@ -17,7 +17,7 @@ pipeline:
     method: seed
     params:
       urls:
-        - https://kloop.kg/page/2/
+        - https://24.kg/
     handle:
       pass: fetch
 
@@ -28,8 +28,19 @@ pipeline:
       # These rules specify which pages should be scraped or included:
       rules:
         or:
-          - pattern: 'https://kloop.kg/blog/'
-          - pattern: 'https://kloop.kg/page/2/$'
+          - pattern: 'https://24.kg/vlast/'
+          - pattern: 'https://24.kg/obschestvo/'
+          - pattern: 'https://24.kg/obschestvo/'
+          - pattern: 'https://24.kg/ekonomika/'
+          - pattern: 'https://24.kg/proisshestvija/'
+          - pattern: 'https://24.kg/agent_024/'
+          - pattern: 'https://24.kg/sport/'
+          - pattern: 'https://24.kg/tehnoblog/'
+          - pattern: 'https://24.kg/kyrgyzcha/'
+          - pattern: 'https://24.kg/english/'
+          - pattern: 'https://24.kg/biznes_info/'
+          - pattern: 'https://24.kg/$'
+                    
     handle:
       pass: parse
 
@@ -39,7 +50,17 @@ pipeline:
     params:
       store:
         and:
-          - pattern: 'https://kloop.kg/blog/'
+          - pattern: 'https://24.kg/vlast/'
+          - pattern: 'https://24.kg/obschestvo/'
+          - pattern: 'https://24.kg/obschestvo/'
+          - pattern: 'https://24.kg/ekonomika/'
+          - pattern: 'https://24.kg/proisshestvija/'
+          - pattern: 'https://24.kg/agent_024/'
+          - pattern: 'https://24.kg/sport/'
+          - pattern: 'https://24.kg/tehnoblog/'
+          - pattern: 'https://24.kg/kyrgyzcha/'
+          - pattern: 'https://24.kg/english/'
+          - pattern: 'https://24.kg/biznes_info/'
     handle:
       # this makes it a recursive web crawler:
       store: extractdata
@@ -47,7 +68,7 @@ pipeline:
   
   extractdata:
     # Parse the scraped pages to extract useful information
-    method: example.kloop_headers:extractdata
+    method: example.24_headers:extractdata
     handle:
       pass: store
 
@@ -55,6 +76,6 @@ pipeline:
     # Store the crawled documents to a directory
     method: db
     params:
-      table: "kg_kloop_headers"
+      table: "24kg_headers"
       unique:
         - url
