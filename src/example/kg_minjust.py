@@ -11,8 +11,8 @@ def extractdata(context, data):
     name_ru = _gettext(page.xpath("//span[contains(text(),'2. П')]/../../following-sibling::td//text()"))
     short_name_kg = _gettext(page.xpath("//span[contains(text(),'3. С')]/../../following-sibling::td//text()"))
     short_name_ru = _gettext(page.xpath("//span[contains(text(),'4. С')]/../../following-sibling::td//text()"))
-    #legal_form = _gettext(page.xpath("//span[contains(text(),'5. О')]/../../following-sibling::td//text()"))
-    #foreign_participation = _gettext(page.xpath("//span[contains(text(),'6. Е')]/../../following-sibling::td//text()"))
+    legal_form = _gettext(page.xpath("//span[contains(text(),'5. О')]/../../following-sibling::td//text()"))
+    foreign_participation = _gettext(page.xpath("//span[contains(text(),'6. Е')]/../../following-sibling::td//text()"))
     registration_number = _gettext(page.xpath("//span[contains(text(),'7. Р')]/../../following-sibling::td//text()"))
     okpo = _gettext(page.xpath("//span[contains(text(),'8. Код')]/../../../following-sibling::tr[1]/td//text()"))
     inn = _gettext(page.xpath("//span[contains(text(),'9. И')]/../../following-sibling::td//text()"))
@@ -46,8 +46,8 @@ def extractdata(context, data):
 	    "full_name_kg": full_name_kg,
 	    "short_name_kg": short_name_kg,
 	    "short_name_ru": short_name_ru,
-	    #"legal_form": legal_form,
-	    #"foreign_participation": foreign_participation,
+	    "legal_form": legal_form,
+	    "foreign_participation": foreign_participation,
 	    "registration_number": registration_number,
 	    "okpo": okpo,
 	    "inn": inn,
