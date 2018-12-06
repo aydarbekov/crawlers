@@ -19,7 +19,7 @@ def extractdata(context, data):
     region = _gettext(page.xpath("//span[contains(text(),'10. О')]/../../following-sibling::td//text()"))
     district = _gettext(page.xpath("//span[contains(text(),'11. Р')]/../../following-sibling::td//text()"))
     city  = _gettext(page.xpath("//span[contains(text(),'12. Г')]/../../following-sibling::td//text()"))
-    #microdistr = _gettext(page.xpath("//span[contains(text(),'13. М')]/../../following-sibling::td//text()"))
+    microdistr = _gettext(page.xpath("//span[contains(text(),'13. М')]/../../following-sibling::td//text()"))
     #street = _gettext(page.xpath("//span[contains(text(),'14. У')]/../../following-sibling::td//text()"))
     #home = _gettext(page.xpath("//span[contains(text(),'15. ')]/../../following-sibling::td//text()"))
     #appartment = _gettext(page.xpath("//span[contains(text(),'16. ')]/../../following-sibling::td//text()"))
@@ -54,7 +54,7 @@ def extractdata(context, data):
 	    "region": region,
 	    "district": district,
 	    "city": city,
-	    #"microdistr": microdistr,
+	    "microdistr": microdistr,
 	    #"street":street,
 	    #"home": home,
 	    #"appartment": appartment,
