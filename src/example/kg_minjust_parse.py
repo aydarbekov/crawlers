@@ -22,9 +22,11 @@ def parse_html(context, data, result):
     context.log.info('Parse: %r', result.url)
 
     title = result.html.findtext('.//title')
-    if title is not None and 'title' not in data:
+    if title != None and 'title' not in data:
         data['title'] = title
-
+	else:
+		data['faxtest'] = 'faxtest'
+		
     include = context.params.get('include_paths')
     if include is None:
         roots = [result.html]
