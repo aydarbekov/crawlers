@@ -7,7 +7,7 @@ def extractdata(context, data):
 
     # Parse the rest of the page to extract structured data.
 
-    street_kg = _gettext(page.xpath('//tbody/tr/td[4]/div/p/text'))
+    street_kg = _gettext(page.xpath('//tbody/tr/td[4]/div/p/text()'))
     
     org_data = {
         "street_kg": street_kg,
