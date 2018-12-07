@@ -14,6 +14,9 @@ def extractdata(context, data):
     }
     print("----------------PRINTING ORG_DATA----------------")
     print(org_data)
+
+    xpath = '//tbody/tr'
+    rows = tree.xpath(xpath)
     
     for i in range(len(rows)):
         j = i+1
