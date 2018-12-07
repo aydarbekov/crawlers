@@ -17,7 +17,6 @@ def extractdata(context, data):
     for i in range(len(rows)):
         j = i+1
         result = {}
-        street_kg = _gettext(page.xpath('//tbody/tr['+str(j)+']/td[3]/div/p/text()'))
         result['street_kg'] = street_kg
         print (result)
     context.emit(data=org_data)
