@@ -10,8 +10,8 @@ def extractdata(context, data):
     
     
     
-    for i in range('//tbody/tr/text'):
-        
+    for i in range(len(page.xpath('//tbody/tr'))):
+        i=i+1
         id_street = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[2]/text()')))
         street_kg = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[3]/div/p/text()')))
         
