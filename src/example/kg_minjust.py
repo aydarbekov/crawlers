@@ -39,49 +39,59 @@ def extractdata(context, data):
     #participants_total = _gettext(page.xpath("//span[contains(text(),'30. О')]/../../following-sibling::td//text()"))
     #participants = _gettext(page.xpath("//span[contains(text(),'31. У')]/../../following-sibling::td//text()"))
     #participant = _gettext(page.xpath("//span[contains(text(),'Учредитель')]/../../following-sibling::td//text()"))
-	
+    
     org_data = {
-	    "url": response.url,
-	    "name_ru": name_ru,
-	    "full_name_kg": full_name_kg,
-	    "short_name_kg": short_name_kg,
-	    "short_name_ru": short_name_ru,
-	    "legal_form": legal_form,
-	    "foreign_participation": foreign_participation,
-	    "registration_number": registration_number,
-	    "okpo": okpo,
-	    "inn": inn,
-	    "region": region,
-	    "district": district,
-	    "city": city,
-	    "microdistr": microdistr,
-	    #"street":street,
-	    #"home": home,
-	    #"appartment": appartment,
-	    #"phone": phone,
-	    #"fax": fax,
-	    #"mail": mail,
-	    #"Rereg": Rereg,
-	    #"Date_Order": Date_Order,
-	    #"First_date_reg": First_date_reg,
-	    #"Method_of_creating": Method_of_creating,
-	    #"Type_of_ownership": Type_of_ownership,
-	    #"head_name_sur": head_name_sur,
-	    #"main_activity_type": main_activity_type,
-	    #"eco_activity_code": eco_activity_code,
-	    #"participants_phys_quan": participants_phys_quan,
-	    #"participants_jur_quan": participants_jur_quan,
-	    #"participants_total": participants_total,
-	    #"participants": participants,
-	    #"participant": participant
+        "url": response.url,
+        "name_ru": name_ru,
+        "full_name_kg": full_name_kg,
+        "short_name_kg": short_name_kg,
+        "short_name_ru": short_name_ru,
+        "legal_form": legal_form,
+        "foreign_participation": foreign_participation,
+        "registration_number": registration_number,
+        "okpo": okpo,
+        "inn": inn,
+        "region": region,
+        "district": district,
+        "city": city,
+        "microdistr": microdistr,
+        #"street":street,
+        #"home": home,
+        #"appartment": appartment,
+        #"phone": phone,
+        #"fax": fax,
+        #"mail": mail,
+        #"Rereg": Rereg,
+        #"Date_Order": Date_Order,
+        #"First_date_reg": First_date_reg,
+        #"Method_of_creating": Method_of_creating,
+        #"Type_of_ownership": Type_of_ownership,
+        #"head_name_sur": head_name_sur,
+        #"main_activity_type": main_activity_type,
+        #"eco_activity_code": eco_activity_code,
+        #"participants_phys_quan": participants_phys_quan,
+        #"participants_jur_quan": participants_jur_quan,
+        #"participants_total": participants_total,
+        #"participants": participants,
+        #"participant": participant
     }
     print("----------------PRINTING ORG_DATA----------------")
     print(org_data)
-	
-    context.emit(data=org_data)
+    
+    context.emit(data=clean_dict(org_data))
 
 def _gettext(list):
     if not list:
         return list
     else:
         return list[0].strip()
+
+def clean_dict(data):
+    result = {}
+    for key, value in data.items():
+        if value is None or value=='' or value ==[]:
+            value = '__'
+            result[key] = value
+        else:
+            result[key] = data[key]
+    return result
