@@ -17,12 +17,12 @@ def extractdata(context, data):
             "id_street": id_street,
             "street_kg": street_kg
         }
-        
+        print("----------------PRINTING ORG_DATA----------------")
+        print(org_data)
+        context.emit(data=org_data)
     
     
-    print("----------------PRINTING ORG_DATA----------------")
-    print(org_data)
-    context.emit(data=org_data)
+    
     
 def clean_dict(data):
     result = {}
