@@ -22,7 +22,7 @@ def extractdata(context, data):
             }
         context.emit(data=org_data)
         print("----------------PRINTING ORG_DATA----------------")
-        print(org_data)
+        print(data)
         
         
         
