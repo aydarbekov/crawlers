@@ -9,7 +9,6 @@ def extractdata(context, data):
     
     
     for i in range(len(page.xpath('//tbody/tr/text()'))):
-        result = {}
         id_street = _gettext(page.xpath('//tbody/tr['+str(i)+']/td[2]/text()'))
         street_kg = _gettext(page.xpath('//tbody/tr['+str(i)+']/td[3]/div/p/text()'))
         
@@ -20,9 +19,9 @@ def extractdata(context, data):
     }
     print("----------------PRINTING ORG_DATA----------------")
     print(org_data)
-
-    result['street_kg'] = street_kg
     context.emit(data=org_data)
+   
+    
     
 def _gettext(list):
     if not list:
