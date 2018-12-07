@@ -14,7 +14,7 @@ def extractdata(context, data):
         
     
     org_data = {
-        "id": id
+        "id": id,
         "street_kg": street_kg
     }
     print("----------------PRINTING ORG_DATA----------------")
