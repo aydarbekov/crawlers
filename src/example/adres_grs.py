@@ -20,7 +20,7 @@ def extractdata(context, data):
         print("----------------PRINTING ORG_DATA----------------")
         print(org_data)
     return org_data
-        context.emit(data=org_data)
+    context.emit(data=org_data)
     
    
 def clean_dict(data):
