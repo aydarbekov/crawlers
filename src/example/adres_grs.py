@@ -18,14 +18,13 @@ def extractdata(context, data):
         print("----------------PRINTING ORG_DATA----------------")
         print(org_data)
         
-        
-        
-        
-    org_data = {
+        org_data = {
             "id_street": id_street,
-            "street_kg": street_kg}
-    
-    
+            "street_kg": street_kg
+            }
+        
+        
+        
     context.emit(data=org_data)
     
     
