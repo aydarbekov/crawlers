@@ -10,11 +10,11 @@ def extractdata(context, data):
     street_kg = _gettext(tree.xpath('//tbody/tr['+str(j)+']/td[3]/div/p/text()'))
     
     org_data = {
-	    "street_kg": street_kg,
+        "street_kg": street_kg,
     }
     print("----------------PRINTING ORG_DATA----------------")
     print(org_data)
-	for i in range(len(rows)):
+    for i in range(len(rows)):
         j = i+1
         result = {}
         street_kg = _gettext(tree.xpath('//tbody/tr['+str(j)+']/td[3]/div/p/text()'))
