@@ -15,8 +15,6 @@ def extractdata(context, data):
     print("----------------PRINTING ORG_DATA----------------")
     print(org_data)
 
-    xpath = '//tbody/tr'
-    rows = page.xpath(xpath)
     
     for i in range(len(rows)):
         j = i+1
@@ -24,18 +22,9 @@ def extractdata(context, data):
         street_kg = _gettext(tree.xpath('//tbody/tr['+str(j)+']/td[3]/div/p/text()'))
         result['street_kg'] = street_kg
         print (result)
+        context.emit(data=org_data)
     
-    context.emit(data=add(org_data))
-    
-def add(data):
-    result = {}
-    for i in range(len(rows)):
-        j = i+1
-        result = {}
-        street_kg = _gettext(tree.xpath('//tbody/tr['+str(j)+']/td[3]/div/p/text()'))
-        result['street_kg'] = street_kg
-        print (result)
-    return result
+
 
 def _gettext(list):
     if not list:
