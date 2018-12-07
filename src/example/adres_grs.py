@@ -7,7 +7,7 @@ def extractdata(context, data):
 
     # Parse the rest of the page to extract structured data.
     
-        }
+    
     
     for i in range(len(page.xpath('//tbody/tr'))):
         id_street = _gettext(page.xpath('//tbody/tr['+str(i)+']/td[2]/text()'))
@@ -19,7 +19,7 @@ def extractdata(context, data):
     org_data = {
             "id_street": id_street,
             "street_kg": street_kg
-            
+    }
     context.emit(data=org_data)
     
    
