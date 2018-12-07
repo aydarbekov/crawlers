@@ -11,15 +11,15 @@ def extractdata(context, data):
     for i in range(len(page.xpath('//tbody/tr'))):
         id_street = _gettext(page.xpath('//tbody/tr["+str(i)+"]/td[2]/text()'))
         street_kg = _gettext(page.xpath('//tbody/tr["+str(i)+"]/td[3]/div/p/text()'))
-        
     
-    org_data = {
-        "id_street": id_street,
-        "street_kg": street_kg
-    }
-    print("----------------PRINTING ORG_DATA----------------")
-    print(org_data)
-    context.emit(data=org_data)
+    
+        org_data = {
+            "id_street": id_street,
+            "street_kg": street_kg
+        }
+        print("----------------PRINTING ORG_DATA----------------")
+        print(org_data)
+        context.emit(data=org_data)
    
     
     
