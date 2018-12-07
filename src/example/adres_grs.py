@@ -15,7 +15,8 @@ def extractdata(context, data):
         i=i+1
         id_street.append(_gettext(page.xpath('//tbody/tr['+str(i)+']/td[2]/text()')))
         street_kg.append(_gettext(page.xpath('//tbody/tr['+str(i)+']/td[3]/div/p/text()')))
-        
+        print("----------------PRINTING ORG_DATA----------------")
+        print(org_data)
         
         
         
@@ -24,9 +25,8 @@ def extractdata(context, data):
             "id_street": id_street,
             "street_kg": street_kg}
     
-    print("----------------PRINTING ORG_DATA----------------")
-    print(org_data)
-
+    
+    context.emit(data=org_data)
     
     
     
