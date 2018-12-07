@@ -21,7 +21,7 @@ def extractdata(context, data):
         print(org_data)
         
         context.emit(data=org_data)
-        return org_data
+    return org_data
    
 def clean_dict(data):
     result = {}
