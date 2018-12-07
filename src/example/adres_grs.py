@@ -6,16 +6,23 @@ def extractdata(context, data):
     page = response.html
 
     # Parse the rest of the page to extract structured data.
-
-    street_kg = _gettext(page.xpath('//tbody/tr/td[4]/div/p/text()'))
+    
+    
+    for i in range(len(//tbody/tr)):
+        result = {}
+        id = _gettext(tree.xpath('//tbody/tr/td[2]'))
+        street_kg = _gettext(tree.xpath('//tbody/tr/td[3]'))
+        
     
     org_data = {
-        "street_kg": street_kg,
+        "id": id
+        "street_kg": street_kg
     }
     print("----------------PRINTING ORG_DATA----------------")
     print(org_data)
 
-    
+    result['street_kg'] = street_kg
+        contecst.emit(data=clean_dict(org_data))
 
 
 def _gettext(list):
