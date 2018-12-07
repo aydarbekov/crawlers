@@ -22,7 +22,7 @@ def extractdata(context, data):
     print(org_data)
 
     result['street_kg'] = street_kg
-    contecst.emit(data=org_data)
+    emit(data=org_data)
     
 def _gettext(list):
     if not list:
