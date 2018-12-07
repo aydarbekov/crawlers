@@ -26,7 +26,7 @@ def extractdata(context, data):
         street_kg=[]
         
         
-        context.emit(data=org_data)
+        emit(data=org_data)
     
     
     
