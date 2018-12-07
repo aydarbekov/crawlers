@@ -7,17 +7,19 @@ def extractdata(context, data):
 
     # Parse the rest of the page to extract structured data.
 
-    name = _gettext(page.xpath("//td[3]/div/p"))
+    street_kg = _gettext(tree.xpath('//tbody/tr['+str(j)+']/td[3]/div/p/text()'))
     
-	
     org_data = {
-	    "url": response.url,
-	    "name": name
-	    
+	    "street_kg": street_kg,
     }
     print("----------------PRINTING ORG_DATA----------------")
     print(org_data)
-	
+	for i in range(len(rows)):
+        j = i+1
+        result = {}
+        street_kg = _gettext(tree.xpath('//tbody/tr['+str(j)+']/td[3]/div/p/text()'))
+        result['street_kg'] = street_kg
+        print (result)
     context.emit(data=org_data)
 
 def _gettext(list):
@@ -25,3 +27,4 @@ def _gettext(list):
         return list
     else:
         return list[0].strip()
+        
