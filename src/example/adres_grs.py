@@ -9,6 +9,7 @@ def extractdata(context, data):
     
     
     for i in range(len('tree.xpath(//tbody/tr)')):
+        result = {}
         id = _gettext(page.xpath('//tbody/tr/td[2]'))
         street_kg = _gettext(page.xpath('//tbody/tr/td[3]'))
         
