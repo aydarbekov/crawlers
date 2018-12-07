@@ -22,11 +22,3 @@ def extractdata(context, data):
 
     result['street_kg'] = street_kg
     contecst.emit(data=org_data)
-
-
-def _gettext(list):
-    if not list:
-        return list
-    else:
-        return list[0].strip()
-        
