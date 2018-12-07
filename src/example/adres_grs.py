@@ -19,10 +19,18 @@ def extractdata(context, data):
         }
         print("----------------PRINTING ORG_DATA----------------")
         print(org_data)
-        context.emit(data=org_data)
         return org_data
+        context.emit(data=org_data)
    
-    
+def clean_dict(data):
+    result = {}
+    for key, value in data.items():
+        if value is None or value=='' or value ==[]:
+            value = '__'
+            result[key] = value
+        else:
+            result[key] = data[key]
+    return result    
     
 def _gettext(list):
     if not list:
