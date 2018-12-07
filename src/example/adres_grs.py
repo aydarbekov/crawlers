@@ -14,11 +14,14 @@ def extractdata(context, data):
     }
     print("----------------PRINTING ORG_DATA----------------")
     print(org_data)
+    
     for i in range(len(rows)):
-        j = i+1
-        result = {}
-        result['street_kg'] = street_kg
-        print (result)
+    j = i+1
+    result = {}
+    street_kg = _gettext(tree.xpath('//tbody/tr['+str(j)+']/td[3]/div/p/text()'))
+    result['street_kg'] = street_kg
+    print (result)
+    
     context.emit(data=org_data)
 
 def _gettext(list):
