@@ -17,7 +17,7 @@ pipeline:
     method: seed
     params:
       urls:
-        - http://register.minjust.gov.kg/register/SearchAction.seam?tin=0
+        - http://register.minjust.gov.kg/register/SearchAction.seam?founder=
     handle:
       pass: fetch
 
