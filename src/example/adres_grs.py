@@ -9,17 +9,23 @@ def extractdata(context, data):
     
     
     
+    id_street=[]
+    street_kg=[]
     for i in range(len(page.xpath('//tbody/tr'))):
         i=i+1
-        id_street = _gettext(page.xpath('//tbody/tr['+str(i)+']/td[2]/text()'))
-        street_kg = _gettext(page.xpath('//tbody/tr['+str(i)+']/td[3]/div/p/text()'))
+        id_street.append(_gettext(page.xpath('//tbody/tr['+str(i)+']/td[2]/text()')))
+        street_kg.append(_gettext(page.xpath('//tbody/tr['+str(i)+']/td[3]/div/p/text()')))
         
-        org_data = {
+        
+        
+        
+        
+    org_data = {
             "id_street": id_street,
-            "street_kg": street_kg
-        }
-        print("----------------PRINTING ORG_DATA----------------")
-        print(org_data)
+            "street_kg": street_kg}
+    
+    print("----------------PRINTING ORG_DATA----------------")
+    print(org_data)
     context.emit(data=org_data)
     
     
