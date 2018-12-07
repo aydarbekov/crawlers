@@ -78,7 +78,7 @@ def extractdata(context, data):
     print("----------------PRINTING ORG_DATA----------------")
     print(org_data)
     
-    context.emit(data=org_data)
+    context.emit(data=clean_dict(org_data))
 
 def _gettext(list):
     if not list:
