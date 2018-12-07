@@ -20,13 +20,12 @@ def extractdata(context, data):
             "id_street": id_street,
             "street_kg": street_kg
             }
+        context.emit(data=org_data)
         print("----------------PRINTING ORG_DATA----------------")
         print(org_data)
-        id_street=[]
-        street_kg=[]
         
         
-        context.emit(data=org_data)
+        
     
     
     
