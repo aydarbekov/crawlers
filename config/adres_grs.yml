@@ -57,6 +57,6 @@ pipeline:
     # Store the crawled documents to a directory
     method: db
     params:
-      table: "24kg_headers"
+      table: "grs"
       unique:
         - url
