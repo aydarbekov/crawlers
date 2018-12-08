@@ -7,14 +7,10 @@ def extractdata(context, data):
 
     # Parse the rest of the page to extract structured data.
     
-    
-    
-    
     for i in range(len(page.xpath('//tbody/tr'))):
         i=i+1
         id_street = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[2]/text()')))
         street_kg = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[3]/div/p/text()')))
-        
         
         org_data = {
             "id_street": id_street,
@@ -22,13 +18,7 @@ def extractdata(context, data):
             }
         context.emit(data=org_data)
         print("----------------PRINTING ORG_DATA----------------")
-        print(data)
-        
-        
-        
-    
-    
-    
+        print(org_data)
     
 def clean_dict(data):
     result = {}
