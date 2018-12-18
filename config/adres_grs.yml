@@ -40,7 +40,7 @@ pipeline:
     params:
       store:
         and:
-          - pattern: 'http://address.darek.gosreg.kg/'
+          - pattern: #'http://address.darek.gosreg.kg/'
           
     handle:
       # this makes it a recursive web crawler:
