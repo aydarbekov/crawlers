@@ -26,7 +26,7 @@ def extractdata(context, data):
         "old_ru": old_ru,
         "nas_punkt": nas_punkt
         }
-        context.emit(data=org_data)
+        context.emit(data=clean_dict(org_data))
         print("----------------PRINTING ORG_DATA----------------")
         print(org_data)
     
