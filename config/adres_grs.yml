@@ -59,4 +59,5 @@ pipeline:
     params:
       table: "grs"
       unique:
+        - number
     
