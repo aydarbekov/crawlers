@@ -9,12 +9,22 @@ def extractdata(context, data):
     
     for i in range(len(page.xpath('//tbody/tr'))):
         i=i+1
+        number = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[1]/text()')))
         id_street = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[2]/text()')))
         street_kg = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[3]/div/p/text()')))
+        street_ru = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[4]/div/p/text()')))
+        old_kg = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[5]/div/p/text()')))
+        old_ru = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[6]/div/p/text()')))
+        nas_punkt = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[7]/text()')))
         
         org_data = {
+        "number": number,
         "id_street": id_street,
-        "street_kg": street_kg
+        "street_kg": street_kg,
+        "street_ru": street_ru,
+        "old_kg": old_kg,
+        "old_ru": old_ru,
+        "nas_punkt": nas_punkt
         }
         context.emit(data=org_data)
         print("----------------PRINTING ORG_DATA----------------")
