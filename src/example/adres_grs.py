@@ -32,7 +32,7 @@ def extractdata(context, data):
         
 def get_next_url(url): 
     print (url)
-    num = int(url.split("page=")[1]) + 1
+    num = url.split("page=")[1]
     print (num)
     print (url.split("page=")[0])
     return url.split("page=")[0] + str(num)
