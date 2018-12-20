@@ -26,7 +26,7 @@ def extractdata(context, data):
         "nas_punkt": nas_punkt
         }
         context.emit(rule=store, data=clean_dict(org_data))
-        context.emit(rule=fetch, get_next_url(url))
+        context.emit(rule=fetch, data=get_next_url(url))
         print("----------------PRINTING ORG_DATA----------------")
         print(org_data)
         
