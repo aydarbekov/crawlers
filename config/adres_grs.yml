@@ -29,8 +29,6 @@ pipeline:
       rules:
         or:
           - pattern: 'http://address.darek.gosreg.kg/'
-          
-                    
     handle:
       pass: parse
 
