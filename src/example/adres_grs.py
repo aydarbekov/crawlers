@@ -32,11 +32,11 @@ def extractdata(context, data):
         
 def get_next_url(url): 
     print (url)
-    num = url.split("page=")[1]
+    spl_1=url.split("page=")
+    spl_2=spl_1[1].split("&")
+    num = int(spl_2[0])+1
     print (num)
-    print (url.split("page=")[0])
-    return url.split("page=")[0] + str(num)
-    
+    return spl_1[0]+"page="+str(num)+"&"+spl_2[1]
     
 def clean_dict(data):
     result = {}
