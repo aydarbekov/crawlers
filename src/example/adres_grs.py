@@ -31,7 +31,7 @@ def extractdata(context, data):
         print(org_data)
         
 def get_next_url(url):
-    num = int(url.split("page=")[1])) + 1
+    num = int(url.split("page=")[1]) + 1
     return url.split("page=")[0] + str(num)
     
 def clean_dict(data):
