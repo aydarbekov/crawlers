@@ -7,7 +7,7 @@ def extractdata(context, data):
 
     # Parse the rest of the page to extract structured data.
     
-    for i in range(1,len(page.xpath('//tbody/tr'))+1):
+    for i in range(1, len(page.xpath('//tbody/tr')) + 1):
         number = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[1]/text()')))
         id_street = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[2]/text()')))
         street_kg = (_gettext(page.xpath('//tbody/tr['+str(i)+']/td[3]/div/p/text()')))
@@ -25,9 +25,14 @@ def extractdata(context, data):
         "old_ru": old_ru,
         "nas_punkt": nas_punkt
         }
-        context.emit(data=clean_dict(org_data))
+        context.emit(rule=store, data=clean_dict(org_data))
+        context.emit(rule=fetch, get_next_url(url))
         print("----------------PRINTING ORG_DATA----------------")
         print(org_data)
+        
+def get_next_url(url):
+    num = int(url.split("page=")[1])) + 1
+    return url.split("page=")[0] + str(num)
     
 def clean_dict(data):
     result = {}
