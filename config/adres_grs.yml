@@ -214,7 +214,7 @@ pipeline:
 
   parse:
     # Parse the scraped pages to find if they contain additional links.
-    method: parse
+    method: example.kg_minjust_parse:parse
     params:
       store:
         and:
