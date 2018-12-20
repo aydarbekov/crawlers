@@ -31,15 +31,14 @@ def extractdata(context, data):
         print(url)
         print(get_next_url(url))
         context.emit(rule="store", data=clean_dict(org_data))
-        context.emit(rule="fetch", data=url_dict)
         print("----------------PRINTING ORG_DATA----------------")
         print(org_data)
+    context.emit(rule="fetch", data=url_dict)
         
 def get_next_url(url): 
     spl_1=url.split("page=")
     spl_2=spl_1[1].split("&")
     num = int(spl_2[0])+1
-    print(num)
     return spl_1[0]+"page="+str(num)+"&"+spl_2[1]
     
 def clean_dict(data):
